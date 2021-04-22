@@ -1,6 +1,6 @@
 # erebor
 
-## commmands
+## commands
 
 ```
 rustup update
