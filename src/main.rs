@@ -1,39 +1,6 @@
+mod module_03;
+
 fn main() {
-
-    // We are calling a Macro by using the '!' character
-    println!("Hello, world!");
-
-    // Variables
-    let x: i32 = 5;
-    println!("The value of x is {}", x);
-
-    let mut y: i32 = 10;
-    println!("The value of y is {}", y);
-    y = 15;
-    println!("The value of y now {}", y);
-
-    /*
-    Constants may be set only to a constant expression, not the result of a function call
-    or any other value that could only be computed at runtime.
-    */
-    const MAX_X: u32 = 100000;
-    const MAX_Y: u32 = 100_000;
-    println!("Max x is {}. Max y is {}.", MAX_X, MAX_Y);
-
-    // Shadowing
-    let z: i32 = 10;
-    let z = z + 10;
-    let z = z + 10;
-    println!("The value of z is {}", z);
-
-    /*
-    A difference between mut and shadowing is that because we’re effectively creating a
-    new variable when we use the let keyword again, we can change the type of the value
-    but reuse the same name.
-    */
-    let spaces: &str = "   ";
-    let spaces: usize = spaces.len();
-    println!("spaces value is {}", spaces);
 
     /*
     This code doesn't compile. The error says we’re not allowed to mutate a variable’s type:
