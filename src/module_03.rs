@@ -1,5 +1,5 @@
 #[cfg(test)]
-mod tests {
+mod module_03 {
 
     // Hello world
     #[test]
@@ -8,7 +8,8 @@ mod tests {
         println!("Hello, world!");
     }
 
-    // Variables and mutability
+    // 3.1. Variables and mutability
+
     #[test]
     fn immutable_variable() {
         let x: i32 = 5;
@@ -60,6 +61,8 @@ mod tests {
         // let mut spaces: &str = "   ";
         // spaces = spaces.len();
     }
+
+    // 3.2. Data Types
 
     // Rust is a statically typed language,
     // If we don’t add the type annotation here, Rust will display an error, meaning that the
@@ -155,11 +158,23 @@ mod tests {
     #[test]
     fn compound_array() {
         let sequence: [i32; 5] = [1, 2, 3, 4, 5];
-        let months: [&str; 12] = ["January", "February", "March", "April", "May", "June", "July",
-            "August", "September", "October", "November", "December"];
+        let months: [&str; 12] = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+        ];
 
         // Different syntax, similar arrays
-        let arr_1: [i32; 5] = [3;5];
+        let arr_1: [i32; 5] = [3; 5];
         let arr_2: [i32; 5] = [3, 3, 3, 3, 3];
 
         // Accessing arrays
@@ -171,6 +186,80 @@ mod tests {
         // to the array length, Rust will panic. Rust doesn't allow invalid memory to be accessed.
     }
 
+    // 3.3. Functions
+
+    // Rust doesn’t care where you define your functions, only that they’re defined somewhere.
     #[test]
-    fn template() {}
+    fn functions_definition() {
+        fn print_greeting() {
+            println!("Hello, world!");
+        }
+
+        fn print_age(age: u32) {
+            println!("The age is: {}", age);
+        }
+
+        fn print_coordinates(x: i32, y: i32) {
+            println!("The coordinates are ({},{})", x, y);
+        }
+
+        print_greeting();
+        print_age(20);
+        print_coordinates(-12, 45);
+    }
+
+    // Rust is an expression-based language
+    // Statements: instructions that perform some action and do not return a value
+    // Expressions: evaluate to a resulting value
+    #[test]
+    fn functions_body() {
+        // Statements do not return values.
+        let a = 6;
+
+        // Expressions evaluate to something
+        // - For instance: 5 + 6 is an expression that evaluates to the value 11
+        // - Calling a function is an expression
+        // - Calling a macro is an expression
+
+        let x: i32 = 5;
+
+        // This expression (block) evaluates to 4. Note the i + 1 line without a semicolon at the end
+        // Expressions do not include ending semicolons. If you add a semicolon to the end of an
+        // expression, you turn it into a statement, which will then not return a value
+        let y: i32 = {
+            let i: i32 = 3;
+            i + 1
+        };
+
+        println!("The value of y is: {}", y);
+    }
+
+    // Return value
+    // - We don’t name return values, but we do declare their type after an arrow (->)
+    // - The return value of the function is synonymous with the value of the final expression
+    //   in the block of the body of a function.
+    // - You can return early from a function by using the return keyword and specifying a value
+    #[test]
+    fn functions_return_value() {
+
+        // We’re using the return value of a function to initialize a variable
+        fn five() -> i32 {
+            5
+        }
+        let x: i32 = five();
+        println!("The value of x is: {}", 5);
+
+        fn plus_one(a: i32) -> i32 {
+            a + 1
+            // - If we place a semicolon at the end of the line containing a + 1, changing it
+            //   from an expression to a statement, we’ll get an error: expected `i32`, found `()`
+            // - The definition of the function plus_one says that it will return an i32,
+            //   but statements don’t evaluate to a value, which is expressed by (), an empty tuple.
+
+        }
+        let y:i32 = plus_one(5);
+    }
+
+    // TODO: 3.5 Control Flow
+
 }
