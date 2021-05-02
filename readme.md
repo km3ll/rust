@@ -36,3 +36,4 @@ Create a new project
 
 - [The Rust Programming Language](https://doc.rust-lang.org/book/title-page.html)
 - [TOML - Tom's Obvious Minimal Language (Cargo's config format)](https://toml.io/en/)
+- [Naming conventions: snake_case and kebab-case](https://www.theserverside.com/definition/Snake-case)
