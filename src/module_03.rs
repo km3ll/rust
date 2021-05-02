@@ -134,6 +134,43 @@ mod tests {
         );
     }
 
+    // Compound Types
+    // They can group multiple values into one type.
+    // Rust has two primitive compound types: tuples and arrays.
+
+    // Tuples have a fixed length: once declared, they cannot grow or shrink in size.
+    #[test]
+    fn compound_tuple() {
+        //Destructuring: breaking a single tuple into parts
+        let tup: (i32, f64, u8) = (500, 6.4, 1);
+        let (x, y, z) = tup;
+
+        println!("tup values are x={}, y={}, z={}", x, y, z);
+        println!("tup values are x={}, y={}, z={}", tup.0, tup.1, tup.2);
+    }
+
+    // Arrays
+    // - Every element of an array must have the same type, and have a fixed length.
+    // - They are useful when you want your data allocated on the stack rather than the heap
+    #[test]
+    fn compound_array() {
+        let sequence: [i32; 5] = [1, 2, 3, 4, 5];
+        let months: [&str; 12] = ["January", "February", "March", "April", "May", "June", "July",
+            "August", "September", "October", "November", "December"];
+
+        // Different syntax, similar arrays
+        let arr_1: [i32; 5] = [3;5];
+        let arr_2: [i32; 5] = [3, 3, 3, 3, 3];
+
+        // Accessing arrays
+        // An array is a single chunk of memory allocated on the stack.
+        println!("The first month of the year is {}", months[0]);
+
+        // When you attempt to access an element using indexing, Rust will check that the index
+        // you’ve specified is less than the array length. If the index is greater than or equal
+        // to the array length, Rust will panic. Rust doesn't allow invalid memory to be accessed.
+    }
+
     #[test]
     fn template() {}
 }
