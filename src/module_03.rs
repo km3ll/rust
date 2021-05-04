@@ -1,6 +1,5 @@
 #[cfg(test)]
 mod module_03 {
-
     // Hello world
     #[test]
     fn hello_world() {
@@ -241,7 +240,6 @@ mod module_03 {
     // - You can return early from a function by using the return keyword and specifying a value
     #[test]
     fn functions_return_value() {
-
         // We’re using the return value of a function to initialize a variable
         fn five() -> i32 {
             5
@@ -255,16 +253,14 @@ mod module_03 {
             //   from an expression to a statement, we’ll get an error: expected `i32`, found `()`
             // - The definition of the function plus_one says that it will return an i32,
             //   but statements don’t evaluate to a value, which is expressed by (), an empty tuple.
-
         }
-        let y:i32 = plus_one(5);
+        let y: i32 = plus_one(5);
     }
 
     // 3.5 Control Flow
 
     #[test]
     fn flow_if_expressions() {
-
         let number_a: i32 = 3;
         if number_a != 0 {
             println!("number_a was something other than zero");
@@ -278,15 +274,54 @@ mod module_03 {
         } else {
             println!("number_b is not divisible by 3 or 4");
         }
-
     }
 
     // Because if is an expression, we can use it on the right side of a let statement
     #[test]
     fn flow_if_in_expression() {
         let condition: bool = true;
-        let number: i32 = if contition { 5 } else { 6 };
-        assert_eq!(number, 5)
+        let number: i32 = if condition { 5 } else { 6 };
+        assert_eq!(number, 5);
     }
 
+    #[test]
+    fn loops_loop() {
+        let mut counter: i32 = 0;
+
+        let result = loop {
+            counter += 1;
+            if counter == 10 {
+                break counter * 2;
+            }
+        };
+
+        println!("The result is {}", result);
+        assert_eq!(result, 20);
+    }
+
+    #[test]
+    fn loops_while() {
+        let mut counter: i32 = 3;
+
+        while counter != 0 {
+            println!("{}!", counter);
+            counter -= 1;
+        }
+
+        println!("liftoff!!");
+        assert_eq!(counter, 0);
+    }
+
+    #[test]
+    fn loops_for() {
+        let numbers: [i32; 5] = [10, 20, 30, 40, 50];
+        for element in numbers.iter() {
+            println!("The value is {}", element);
+        }
+
+        for counter in (1..5).rev() {
+            println!("{}!", counter);
+        }
+        println!("liftoff");
+    }
 }
