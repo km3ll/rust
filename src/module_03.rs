@@ -260,6 +260,33 @@ mod module_03 {
         let y:i32 = plus_one(5);
     }
 
-    // TODO: 3.5 Control Flow
+    // 3.5 Control Flow
+
+    #[test]
+    fn flow_if_expressions() {
+
+        let number_a: i32 = 3;
+        if number_a != 0 {
+            println!("number_a was something other than zero");
+        }
+
+        let number_b = 6;
+        if number_b % 4 == 0 {
+            println!("number_b is divisible by 4");
+        } else if number_b % 3 == 0 {
+            println!("number_b is divisible by 3");
+        } else {
+            println!("number_b is not divisible by 3 or 4");
+        }
+
+    }
+
+    // Because if is an expression, we can use it on the right side of a let statement
+    #[test]
+    fn flow_if_in_expression() {
+        let condition: bool = true;
+        let number: i32 = if contition { 5 } else { 6 };
+        assert_eq!(number, 5)
+    }
 
 }
