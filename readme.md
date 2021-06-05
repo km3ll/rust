@@ -2,35 +2,38 @@
 
 ## commands
 
-#### cargo: package manager
+#### cargo
 
-Compile and run
+```bash
+// compile and run
+cargo run
+cargo check
 
-- `cargo run`
-- `cargo check`
+// runable file
+cargo build
+ └─ ./target/debug/erebor
+cargo build --release
+ └─ ./target/release/erebor
 
-Create an executable file
-
-- `cargo build`
-- `./target/debug/erebor`
-- `cargo build --release`
-- `./target/release/erebor`
-
-Create a new project
-
-- `cargo new erebor`
+// new project
+cargo new erebor
+```
 
 #### compiler
 
-- `rustc --version`
-- `rustc src/main.rs --out-dir target`
-- `./target/main`
+```bash
+rustc --version
+rustc src/main.rs --out-dir target
+ └─ ./target/main
+```
 
-#### rustup tool
+#### rustup
 
-- `rustup update`
-- `rustup doc`
-- `rustfmt src/main.rs`
+```bash
+rustup update
+rustup doc
+rustfmt src/main.rs
+```
 
 ## references
 
