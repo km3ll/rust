@@ -1,4 +1,4 @@
-# erebor
+# rust
 
 ## commands
 
@@ -35,5 +35,6 @@ Create a new project
 ## references
 
 - [The Rust Programming Language](https://doc.rust-lang.org/book/title-page.html)
+- [The Cargo Book](https://doc.rust-lang.org/cargo/index.html)
 - [TOML - Tom's Obvious Minimal Language (Cargo's config format)](https://toml.io/en/)
 - [Naming conventions: snake_case and kebab-case](https://www.theserverside.com/definition/Snake-case)
