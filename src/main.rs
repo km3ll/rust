@@ -1,6 +1,7 @@
 use std::io;
 mod chapter_04;
 mod p01_guessing_game;
+mod p02_unit_tests;
 
 fn main() {
     menu();
