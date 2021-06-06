@@ -1,8 +1,8 @@
 /*
- * Project 02: Unit Tests
+ * Project 00: Unit Tests
  * */
  #[cfg(test)]
-mod p02_unit_tests {
+mod p00_unit_tests {
     // Hello world
     #[test]
     fn hello_world() {

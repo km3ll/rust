@@ -3,7 +3,7 @@ use std::cmp::Ordering;
 use std::io;
 
 /*
- * project 01: Guessing Game
+ * Project 21: Guessing Game
  * */
 pub fn guessing_game() {
     println!("Guess the number!");
