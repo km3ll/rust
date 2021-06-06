@@ -2,9 +2,7 @@ use std::io;
 mod chapter_04;
 
 fn main() {
-
     menu();
-
 }
 
 fn menu() {

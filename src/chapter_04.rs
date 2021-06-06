@@ -15,6 +15,19 @@
  * and returns a pointer, which is the address of that location.
  * Pushing values onto the stack is not considered allocating. Because the pointer is a known, fixed size,
  * you can store the pointer on the stack, but when you want the actual data, you must follow the pointer.
+ * 
+ * Scope
+ * A scope is the range within a program for which an item is valid.
+ * 
+ * String
+ * This type is allocated on the heap and as such is able to store an amount of text that is unknown to us at compile time.
+ * Why can String be mutated but literals cannot?
+ *  - In the case of a string literal, we know the contents at compile time, so the text is hardcoded directly into the final executable.
+ * The memory is automatically returned once the variable that owns it goes out of scope
+ * 
+ * RAII
+ * In C++, this pattern of deallocating resources at the end of an item’s lifetime is sometimes called
+ * Resource Acquisition Is Initialization (RAII). The drop function in Rust will be familiar to you if you’ve used RAII patterns.
  * */
 
  /**
