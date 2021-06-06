@@ -1,5 +1,6 @@
 use std::io;
 mod chapter_04;
+mod p01_guessing_game;
 
 fn main() {
     menu();
@@ -7,8 +8,9 @@ fn main() {
 
 fn menu() {
     loop {
-        println!("Select the module:");
+        println!("Select a module:");
         println!("  4. Ownership");
+        println!(" 20. Guessing Game");
         println!("  0. Exit");
 
         let mut option: String = String::new();
@@ -21,13 +23,12 @@ fn menu() {
             Err(_)  => continue,
         };
 
-        if option == 4 {
-            chapter_04::greeting();
-        } else if option == 0 {
-            break;
-        } else {
-            continue;
-        }
+        match option {
+            4  => chapter_04::greeting(),
+            20 => p01_guessing_game::guessing_game(),
+            0  => break,
+            _ => continue,
+        };
 
     }
 }
