@@ -21,7 +21,9 @@ mod p00_unit_tests {
 
     #[test]
     fn mutable_variable() {
-        let mut y: i32 = 10;
+        let mut y: i32 = 5;
+        println!("The value of y is {}", y);
+        y = 10;
         println!("The value of y is {}", y);
         assert_eq!(y, 10)
     }
@@ -71,7 +73,7 @@ mod p00_unit_tests {
     // compiler needs more information from us to know which type we want to use.
     #[test]
     fn function_parse() {
-        let guess: u32 = "42".parse().expect("Not a number!");
+        let _guess: u32 = "42".parse().expect("Not a number!");
     }
 
     // Scalar Types
@@ -159,7 +161,7 @@ mod p00_unit_tests {
     // - They are useful when you want your data allocated on the stack rather than the heap
     #[test]
     fn compound_array() {
-        let sequence: [i32; 5] = [1, 2, 3, 4, 5];
+        let _sequence: [i32; 5] = [1, 2, 3, 4, 5];
         let months: [&str; 12] = [
             "January",
             "February",
@@ -176,8 +178,8 @@ mod p00_unit_tests {
         ];
 
         // Different syntax, similar arrays
-        let arr_1: [i32; 5] = [3; 5];
-        let arr_2: [i32; 5] = [3, 3, 3, 3, 3];
+        let _arr_1: [i32; 5] = [3; 5];
+        let _arr_2: [i32; 5] = [3, 3, 3, 3, 3];
 
         // Accessing arrays
         // An array is a single chunk of memory allocated on the stack.
@@ -216,14 +218,14 @@ mod p00_unit_tests {
     #[test]
     fn functions_body() {
         // Statements do not return values.
-        let a = 6;
+        let _a = 6;
 
         // Expressions evaluate to something
         // - For instance: 5 + 6 is an expression that evaluates to the value 11
         // - Calling a function is an expression
         // - Calling a macro is an expression
 
-        let x: i32 = 5;
+        let _x: i32 = 5;
 
         // This expression (block) evaluates to 4. Note the i + 1 line without a semicolon at the end
         // Expressions do not include ending semicolons. If you add a semicolon to the end of an
@@ -247,7 +249,7 @@ mod p00_unit_tests {
         fn five() -> i32 {
             5
         }
-        let x: i32 = five();
+        let _x: i32 = five();
         println!("The value of x is: {}", 5);
 
         fn plus_one(a: i32) -> i32 {
@@ -257,7 +259,7 @@ mod p00_unit_tests {
             // - The definition of the function plus_one says that it will return an i32,
             //   but statements don’t evaluate to a value, which is expressed by (), an empty tuple.
         }
-        let y: i32 = plus_one(5);
+        let _y: i32 = plus_one(5);
     }
 
     // 3.5 Control Flow
