@@ -2,7 +2,7 @@
 use std::process::{Command};
 
 /*
- * Project 22: Console Client
+ * Project 2: Console Client
  * */
 pub fn console_cli() {
     let mut cmd = Command::new(String::from("docker"));
